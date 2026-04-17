@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import { Resend } from 'resend';
-RESEND_API_KEY="re_6burMroo_JFE38CHYc4kdmXNXs7ZDYXJ2"
 
 
 export default async function contactHandler(req: Request, res: Response) {
