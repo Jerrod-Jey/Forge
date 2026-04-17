@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { Resend } from 'resend';
 RESEND_API_KEY=re_6burMroo_JFE38CHYc4kdmXNXs7ZDYXJ2
-const resendApiKey = process.env.RESEND_API_KEY;
+
 
 export default async function contactHandler(req: Request, res: Response) {
   // Ensure we only process POST requests
