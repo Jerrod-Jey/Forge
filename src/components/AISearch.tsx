@@ -30,6 +30,9 @@ const AISearch = () => {
     setError(null);
 
     try {
+      if (!process.env.GEMINI_API_KEY) {
+        throw new Error("GEMINI_API_KEY is missing. Please ensure it is set in your environment variables.");
+      }
       const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       const systemInstruction = `You are a helpful AI assistant for "Forge Brand Design", a digital products and services provider based in Windsor, Ontario.
       
@@ -63,7 +66,7 @@ const AISearch = () => {
       - Focus on converting the user to an inquiry.`;
 
       const response = await ai.models.generateContent({
-        model: "gemini-3-flash-preview",
+        model: "gemini-2.5-flash",
         contents: query,
         config: {
           systemInstruction: systemInstruction,
