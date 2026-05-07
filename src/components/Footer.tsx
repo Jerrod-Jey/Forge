@@ -5,7 +5,7 @@ import AISearch from './AISearch';
 
 const Footer = () => {
   return (
-    <footer className="bg-forge-navy pt-20 pb-10 border-t border-white/5 text-white">
+    <footer className="relative z-50 bg-forge-navy pt-20 pb-10 border-t border-white/5 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center mb-16 pb-16 border-b border-white/5">
           <div className="max-w-xl w-full text-center">

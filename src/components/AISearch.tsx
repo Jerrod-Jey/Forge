@@ -30,9 +30,6 @@ const AISearch = () => {
     setError(null);
 
     try {
-      if (!process.env.GEMINI_API_KEY) {
-        throw new Error("GEMINI_API_KEY is missing. Please ensure it is set in your environment variables.");
-      }
       const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       const systemInstruction = `You are a helpful AI assistant for "Forge Brand Design", a digital products and services provider based in Windsor, Ontario.
       
@@ -66,7 +63,7 @@ const AISearch = () => {
       - Focus on converting the user to an inquiry.`;
 
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-3-flash-preview",
         contents: query,
         config: {
           systemInstruction: systemInstruction,
@@ -91,7 +88,7 @@ const AISearch = () => {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="absolute bottom-full mb-6 right-0 w-[90vw] md:w-[450px] overflow-hidden"
+            className="absolute bottom-full mb-6 right-0 w-[90vw] md:w-[450px] overflow-hidden z-[9999]"
           >
             <div className="glass-card rounded-[2.5rem] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
               <div className="p-8 pb-4 flex items-center justify-between border-b border-white/5 bg-white/5">
