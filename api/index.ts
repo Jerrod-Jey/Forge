@@ -29,7 +29,7 @@ app.post("/api/contact", async (req, res) => {
     const { data, error } = await resend.emails.send({
       from: "onboarding@resend.dev",
       replyTo: email,
-      to: "receptai.help@gmail.com",
+      to: "jerrodjey@gmail.com",
       subject: `New Project Inquiry: ${service}`,
       text: `Name: ${fullName}\nEmail: ${email}\nService: ${service}\n\nMessage:\n${message}`,
       html: `
